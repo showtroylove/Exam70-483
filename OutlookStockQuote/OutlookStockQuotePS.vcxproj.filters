@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a1b32960-ea02-46be-8115-b67043748754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{cc110a58-92bc-450b-8af4-658a22cff703}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OutlookStockQuoteps.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OutlookStockQuote_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OutlookStockQuote_p.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dlldata.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

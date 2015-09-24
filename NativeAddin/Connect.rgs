@@ -1,0 +1,50 @@
+HKCR
+{
+	NativeAddin.Connect.1 = s 'Connect Class'
+	{
+		CLSID = s '{6CF34D23-1AC6-4343-BCFF-8D50BB33E821}'
+	}
+	NativeAddin.Connect = s 'Connect Class'
+	{		
+		CurVer = s 'NativeAddin.Connect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6CF34D23-1AC6-4343-BCFF-8D50BB33E821} = s 'Connect Class'
+		{
+			ProgID = s 'NativeAddin.Connect.1'
+			VersionIndependentProgID = s 'NativeAddin.Connect'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{206FD8F3-42D2-412B-9C44-C4750698FA2E}'
+			Version = s '1.0'
+		}
+	}
+}
+HKCU
+{
+    NoRemove Software
+    {
+        NoRemove Microsoft
+        {
+            NoRemove Office
+            {
+                NoRemove Outlook
+                {
+                    NoRemove Addins
+                    {
+                        NativeAddin.Connect
+                        {
+                            val Description = s 'Stock Quote Addin'
+                            val FriendlyName = s 'Stock Quote Addin'
+                            val LoadBehavior = d 3
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

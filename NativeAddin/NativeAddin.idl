@@ -1,0 +1,59 @@
+// NativeAddin.idl : IDL source for NativeAddin
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (NativeAddin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(6EEB57C8-C54B-4383-A2FA-D705A5432DED),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IConnect : IDispatch{
+};
+
+[
+	object,
+	uuid(CE895442-9981-4315-AA85-4B9A5C7739D8),
+	dual,
+	nonextensible,
+	helpstring("IRibbonCallback Interface"),
+	pointer_default(unique)
+]
+interface IRibbonCallback : IDispatch {
+	[id(89), helpstring("Button Callback")]
+	HRESULT ButtonClicked([in]IDispatch* ribbonControl);
+};
+
+
+[
+	uuid(206FD8F3-42D2-412B-9C44-C4750698FA2E),
+	version(1.0),
+]
+library NativeAddinLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(8B175671-7F7B-4D34-85D4-06147B185217)		
+	]
+	dispinterface _IConnectEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(6CF34D23-1AC6-4343-BCFF-8D50BB33E821)		
+	]
+	coclass Connect
+	{
+		//[default] interface IConnect;
+		[default, source] dispinterface _IConnectEvents;
+		[default] interface IRibbonCallback;
+	};
+};
+

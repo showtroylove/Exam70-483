@@ -1,0 +1,18 @@
+// OutlookStockQuote.idl : IDL source for OutlookStockQuote
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (OutlookStockQuote.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(2BA49250-3D50-413A-8433-81D4854663D8),
+	version(1.0),
+]
+library OutlookStockQuoteLib
+{
+	importlib("stdole2.tlb");
+};
+

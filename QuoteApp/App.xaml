@@ -1,0 +1,9 @@
+﻿<Application x:Class="QuoteApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:QuoteApp.ViewModels"
+             StartupUri="MainWindow.xaml" Startup="OnAppStartup_UpdateThemeName">
+    <Application.Resources>
+        <local:StockQuotesViewModel x:Key="StockQuotesViewModel" />
+    </Application.Resources>
+</Application>
